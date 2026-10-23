@@ -49,6 +49,16 @@ button{font:inherit;color:inherit}
 .links a:hover{background:var(--sun);color:var(--ink);transform:skewX(-10deg) translateY(-4px)}
 .links a[aria-current="page"]{background:var(--orange);color:var(--ink);border-color:var(--orange);box-shadow:3px 3px 0 #fff}
 
+.hm{display:inline-flex;align-items:stretch;flex:none;transform:rotate(var(--lr,-1.5deg))}
+.links .hm a{transform:skewX(-10deg);border-right-width:0}
+.links .hm:hover a{background:var(--sun);color:var(--ink)}
+.hmb{cursor:pointer;font:700 12px/1 var(--f-mono);background:var(--ink);color:#fff;border:2px solid #fff;padding:9px 9px;transform:skewX(-10deg);margin-left:0}
+.hmb:hover,.hmb[aria-expanded="true"]{background:var(--sun);color:var(--ink)}
+.hm:has(a[aria-current="page"]) .hmb{background:var(--orange);color:var(--ink);border-color:var(--orange)}
+.hmm{position:fixed;z-index:75;display:grid;gap:5px;padding:0;background:none;border:0;box-shadow:none}
+.hmm[hidden]{display:none}
+.hmm a{font:700 11px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;white-space:nowrap;padding:8px 12px;border:2px solid #fff;background:var(--ink);transform:skewX(-10deg);transition:background .12s,color .12s}
+.hmm a:nth-child(1):hover{background:var(--orange);color:var(--ink)}.hmm a:nth-child(2):hover{background:var(--cyan);color:var(--ink)}.hmm a:nth-child(3):hover{background:var(--pink);color:var(--ink)}
 /* PAGE SHELL */
 .page{position:relative;z-index:1;isolation:isolate;padding-top:92px;padding-bottom:40px}
 .wrap{max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,4vw,48px)}
@@ -370,8 +380,9 @@ div.band:hover{transform:none}
 <nav class="nav" aria-label="Main">
   <a class="logo" href="Tifenn_ROBIN_Resume_2026.pdf" target="_blank" rel="noopener" aria-label="Open my CV (PDF)" title="Open my CV">CV</a>
   <a class="logo li" href="https://www.linkedin.com/in/tifenn-robin" target="_blank" rel="noopener" aria-label="Open my LinkedIn profile" title="My LinkedIn">LinkedIn</a>
-  <div class="links"><a href="#home">Home</a><a href="#game">Games</a><a href="#about">About me</a><a href="#contact">Contact</a></div>
+  <div class="links"><span class="hm"><a href="#home">Home</a><button type="button" class="hmb" id="hmb" aria-label="Show Home sections" aria-expanded="false" aria-controls="hmm">&#9662;</button></span><a href="#game">Games</a><a href="#about">About me</a><a href="#contact">Contact</a></div>
 </nav>
+<div class="hmm" id="hmm" role="menu" hidden><a role="menuitem" href="#home" data-sec="cf-exp">Experiences</a><a role="menuitem" href="#home" data-sec="cf-proj">Projects</a><a role="menuitem" href="#home" data-sec="cf-oth">Others</a></div>
 <div class="wipe" id="wipe" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 
 <main>
@@ -434,7 +445,7 @@ div.band:hover{transform:none}
     <h2 class="gr cft" style="--gs:var(--violet)">Projects</h2>
     <div class="cf" tabindex="0">
       <a class="cc" href="#level" style="--cb:linear-gradient(160deg,#12d6ff,#00b39a)">
-        <div class="ca"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#minimap" width="100" height="100"/></svg></div>
+        <div class="ca" style="padding:6% 8%"><img src="cc-2.jpg" alt="Top view of the Chernobog Factory map" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);transform:rotate(-2deg)"></div>
         <div class="cl"><b>Chernobog Factory</b><i>Fanmade map for the game “Overwatch”</i><span class="rl"><em>Level design</em><em class="eng">Unity</em></span><span class="tag">Personal project · 01–03/2026</span></div>
       </a>
       <a class="cc" href="#mouse" style="--cb:linear-gradient(160deg,#7a2cff,#ff3fa4)">
@@ -1436,8 +1447,8 @@ div.band:hover{transform:none}
     <div class="abs">
 
       <div class="pn c" style="--r:.5deg;--sh:var(--violet);display:grid;gap:clamp(26px,4vw,40px)">
-        <p class="abq">My free time goes to <span class="ol">drawing</span>, <span class="ol">painting my Warhammer figurines</span> and <span class="ol">learning about everything</span>. When I read, it's <span class="ol">comics</span>, <span class="ol">manga</span> and books by <span class="ol">Stephen King</span>.</p>
-        <p class="abq">To stay active, I go to the <span class="ol">gym</span> but I also like to <span class="ol">swim</span>. On the darker side, I watch <span class="ol">horror movies</span> and <span class="ol">true crime</span> videos.</p>
+        <p class="abq">My free time goes to <span class="ol">drawing</span>, <span class="ol">painting my Warhammer figurines</span> and <span class="ol">learning about everything</span>. When I read, it's <span class="ol">comics</span>, <span class="ol">manga</span> and novels, like those by <span class="ol">Stephen King</span>.</p>
+        <p class="abq">To stay active, I go to the <span class="ol">gym</span> but I also like to <span class="ol">swim</span>. I also love watching <span class="ol">horror movies</span> and <span class="ol">true crime</span> videos.</p>
         <p class="abq">And I have a huge interest in <span class="ol">Texan</span>, <span class="ol">Japanese</span> and <span class="ol">Korean</span> cultures.</p>
         <div class="abg">
           <div class="abc im" style="--bg:linear-gradient(160deg,#ffd400,#ff9a00)"><img src="hobby-warhammer.jpg" alt="A Warhammer figurine I painted, in blue and gold" loading="lazy"><b>Warhammer</b><i>Painted figurine</i></div>
@@ -1705,6 +1716,24 @@ div.band:hover{transform:none}
     setTimeout(function(){swap(name);},620);
     setTimeout(function(){wipe.classList.remove('go');},1300);
   }
+  (function(){
+    var btn=document.getElementById('hmb'),menu=document.getElementById('hmm');if(!btn||!menu)return;
+    function close(){menu.hidden=true;btn.setAttribute('aria-expanded','false');}
+    function open(){var r=btn.parentNode.getBoundingClientRect();menu.hidden=false;menu.style.top=(r.bottom+6)+'px';menu.style.left=Math.max(8,Math.min(r.left,innerWidth-menu.offsetWidth-8))+'px';btn.setAttribute('aria-expanded','true');}
+    btn.addEventListener('click',function(e){e.stopPropagation();menu.hidden?open():close();});
+    document.addEventListener('click',function(e){if(!menu.hidden&&!menu.contains(e.target))close();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'){close();btn.focus();}});
+    window.addEventListener('scroll',close,{passive:true});window.addEventListener('resize',close);
+    [].forEach.call(menu.querySelectorAll('a[data-sec]'),function(a){a.addEventListener('click',function(e){
+      e.preventDefault();e.stopPropagation();close();var id=a.getAttribute('data-sec');window.__after=id;
+      if(cur==='home'&&(location.hash===''||location.hash==='#home')){var t=document.getElementById(id);window.__after=null;if(t)t.scrollIntoView({behavior:reduce?'auto':'smooth'});}
+      else location.hash='#home';
+    });});
+  })();
+  [].forEach.call(document.querySelectorAll('.links > a, .hm > a'),function(l){l.addEventListener('click',function(e){
+    var t=(l.getAttribute('href')||'').slice(1);
+    if(t&&t===cur){e.preventDefault();window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});}
+  });});
   document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-after]');if(a)window.__after=a.getAttribute('data-after');});
   window.addEventListener('hashchange',function(){go(route());});
   go(route(),true);
