@@ -1880,7 +1880,7 @@ div.band:hover{transform:none}
     b.classList.remove('pop');void b.offsetWidth;b.classList.add('pop');
     var p=draw();
     if(navigator.clipboard&&window.ClipboardItem&&navigator.clipboard.write){
-      var LINK='https://claude.ai/artifact/ECcAf5HPtnsjaNxhhWBtqr';
+      var LINK=location.href.split('#')[0];
       navigator.clipboard.write([new ClipboardItem({'image/png':p,'text/plain':p.then(function(){return new Blob(['Tifenn Robin - Game & Level Designer\n'+LINK],{type:'text/plain'});})})]).then(function(){say('Card + link copied!');},function(){say('Your browser blocked the copy');});
     }else{say('Image copy not supported here');}
   });
