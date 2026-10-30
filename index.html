@@ -1967,7 +1967,7 @@ div.band:hover{transform:none}
       if(it.el){it.el.innerHTML=v!==undefined?v:it.orig;}
       else{var lead=(it.orig.match(/^\s*/)||[''])[0],trail=(it.orig.match(/\s*$/)||[''])[0];it.node.nodeValue=v!==undefined?lead+v+trail:it.orig;}
     });
-    window.__lang=l;document.documentElement.lang=l;
+    window.__lang=l;document.documentElement.lang=l;[].forEach.call(document.querySelectorAll('a[href^="Tifenn_ROBIN_"]'),function(c){var f=l==='fr'?'Tifenn_ROBIN_CV_2026_FR.pdf':'Tifenn_ROBIN_Resume_2026.pdf';c.setAttribute('href',f);c.setAttribute('data-dl',f);});
     window.__t=function(s){return window.__lang==='fr'&&JS[s]?JS[s]:s;};
     var b=document.getElementById('langb');if(b){b.textContent=l==='fr'?'EN':'FR';b.setAttribute('aria-label',l==='fr'?'Switch to English':'Passer en français');}
     var h=document.getElementById('vc-hint');if(h)h.textContent=window.__t('Click to copy my card + link');
